@@ -1,8 +1,11 @@
 import React from "react";
 import "./MainPage.scss";
+import { Container } from "../../components/UI/AppHeader/Container/Container";
 
 export const MainPage = () => {
   return (
+    <Container>
+
     <div className="MainPage">
       <aside className="LeftSide">
         <nav className="Navbar">
@@ -721,5 +724,6 @@ export const MainPage = () => {
         </div>
       </aside>
     </div>
+    </Container>
   );
 };
