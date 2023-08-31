@@ -1,7 +1,7 @@
 import  React from "react";
 
 type AppInputProps = {
-    type: 'tel' | 'password'
+    type: 'tel' | 'password' | 'username_usersurname'
     inputPlaceholder: string
 }
 

@@ -1,6 +1,8 @@
 import React from "react";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { MainPage } from "./pages/MainPage/MainPage";
+import { ForgotPasswordPage } from "./pages/ForgotPasswordPage/ForgotPasswordPage";
+import { RegistrationPage } from "./pages/RegistrationPage/RegistrationPage";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const App: React.FC = () => {
@@ -13,6 +15,14 @@ const App: React.FC = () => {
       {
         path: "/main", 
         element: <MainPage /> 
+      },
+      {
+        path: "/ForgotPasswordPage",
+        element: <ForgotPasswordPage />
+      },
+      {
+        path: "/RegistrationPage",
+        element: <RegistrationPage />
       }
     ])
     

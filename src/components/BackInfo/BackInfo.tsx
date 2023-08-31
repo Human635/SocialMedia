@@ -1,11 +1,12 @@
 import React from "react";
 
-export const RegistrationInfo = () => {
+export const BackInfo = () => {
+  return(
     <div className="registration">
         <span>
-          У вас нет аккаунта? <a href="#">Зарегистрироваться</a>
+          Уже есть аккаунт? <a href="/LoginPage">Войти</a>
         </span>
-        <p>Войти с помощью</p>
+        <p>Регистрация с помощью</p>
         <div className="icons-wrapper">
           <a className="reg__link google-link" href="#">
             <img src="./img/icons/google.svg" alt="Google" />
@@ -21,4 +22,5 @@ export const RegistrationInfo = () => {
           </a>
         </div>
       </div>
+  )
 }
