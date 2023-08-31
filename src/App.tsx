@@ -9,7 +9,7 @@ const App: React.FC = () => {
   const router = createBrowserRouter(
     [
       {
-        path: "/", 
+        path: "/LoginPage", 
         element: <LoginPage /> 
       },
       {
