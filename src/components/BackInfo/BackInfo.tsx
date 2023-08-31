@@ -4,7 +4,7 @@ export const BackInfo = () => {
   return(
     <div className="registration">
         <span>
-          Уже есть аккаунт? <a href="/LoginPage">Войти</a>
+          Уже есть аккаунт? <a href="/">Войти</a>
         </span>
         <p>Регистрация с помощью</p>
         <div className="icons-wrapper">
