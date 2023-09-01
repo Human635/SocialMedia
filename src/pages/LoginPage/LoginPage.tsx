@@ -4,6 +4,7 @@ import { Container } from "../../components/UI//Container/Container";
 import { AppHeader } from "../../components/UI/AppHeader/AppHeader";
 import { AppInput } from "../../components/UI//AppInput/AppInput";
 import { RegistrationInfo } from "../../components/RegistrationInfo/RegistrationInfo";
+import { Link } from "react-router-dom";
 
 export const LoginPage = () => {
   return (
@@ -15,7 +16,7 @@ export const LoginPage = () => {
           <AppInput type="password" inputPlaceholder="Пароль"/>
           <button>Войти</button>
         </form>
-        <a href="../ForgotPasswordPage">Забыли пароль?</a>
+        <Link to="../ForgotPasswordPage">Забыли пароль?</Link>
         <RegistrationInfo />
       </div>
     </Container>

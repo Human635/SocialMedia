@@ -1,4 +1,5 @@
 import React from "react";
+import "./RegistrationInfo.scss"
 
 export const RegistrationInfo = () => {
   return(
