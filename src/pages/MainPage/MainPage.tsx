@@ -1,12 +1,12 @@
 import React from "react";
 import "./MainPage.scss";
-import { Container } from "../../components/UI/Container/Container";
+import { ContainerMainPage } from "../../components/UI/ContainerForMain/ContainerMain";
 import { Header } from "../../components/UI/Header/Header";
 import { AppInputMain } from "../../components/UI/AppInputMain/AppInputMain";
 
 export const MainPage = () => {
   return (
-    <Container>
+    <ContainerMainPage>
       <Header/>
       <div className="MainPage">
         <aside className="LeftSide">
@@ -726,6 +726,6 @@ export const MainPage = () => {
           </div>
         </aside>
       </div>
-    </Container>
+    </ContainerMainPage>
   );
 };
