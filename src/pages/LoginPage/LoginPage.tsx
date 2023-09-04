@@ -1,9 +1,9 @@
 import React from "react";
-import "./LoginPage.scss";
 import { Container } from "../../components/UI//Container/Container";
 import { AppHeader } from "../../components/UI/AppHeader/AppHeader";
-import { AppInput } from "../../components/UI//AppInput/AppInput";
+import { AppInput } from "../../components/UI/AppInputLogin/AppInputLogin";
 import { RegistrationInfo } from "../../components/RegistrationInfo/RegistrationInfo";
+import { AppButton } from "../../components/UI/AppButton/AppButton";
 import { Link } from "react-router-dom";
 
 export const LoginPage = () => {
@@ -14,7 +14,7 @@ export const LoginPage = () => {
         <form action="#">
           <AppInput type="tel" inputPlaceholder="Номер телефона"/>
           <AppInput type="password" inputPlaceholder="Пароль"/>
-          <button>Войти</button>
+          <AppButton value="Войти"></AppButton>
         </form>
         <Link to="../ForgotPasswordPage">Забыли пароль?</Link>
         <RegistrationInfo />

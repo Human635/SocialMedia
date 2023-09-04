@@ -1,10 +1,13 @@
 import React from "react";
 import "./MainPage.scss";
 import { Container } from "../../components/UI/Container/Container";
+import { Header } from "../../components/UI/Header/Header";
+import { AppInputMain } from "../../components/UI/AppInputMain/AppInputMain";
 
 export const MainPage = () => {
   return (
     <Container>
+      <Header/>
       <div className="MainPage">
         <aside className="LeftSide">
           <nav className="Navbar">
@@ -239,11 +242,11 @@ export const MainPage = () => {
         <main className="Main">
           <div className="WhatsNew">
             <img src="./img/users/arina-volkova.jpeg" alt="User" />
-            <input
+            <AppInputMain
               type="text"
               name="whats-new"
               id="whats-new"
-              placeholder="Что у вас нового?"
+              inputPlaceholder="Что у вас нового?"
             />
             <div className="icons-wrapper">
               <svg

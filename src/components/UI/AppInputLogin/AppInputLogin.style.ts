@@ -5,6 +5,17 @@ type StyledInput = {
 }
 
 export const ThemeInput = styled.input<StyledInput>`
+  border: 1px solid transparent;
+  outline: 0;
+  font-family: inherit;
+
+  padding: 12px 15px;
+  background-color: ${(props) => props.theme.colors.bgc};
+  border-radius: 10px;
+  border: 1px solid transparent;
+
+  transition: 200ms;
+
     display: block;
     width: 100%;
     margin-bottom: 20px;
@@ -18,6 +29,7 @@ export const ThemeInput = styled.input<StyledInput>`
     &:is(:hover, :focus) {
       border-color: ${(props) => props.theme.colors.primeColor};
     }
+
     
     ${(props) => props.isError && `
         border-color: ${props.theme.colors.red}

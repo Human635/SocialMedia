@@ -3,7 +3,9 @@ import { Container } from "../../components/UI/Container/Container";
 import "./ForgotPasswordPage.scss";
 import { AppHeader } from "../../components/UI/AppHeader/AppHeader";
 import { AppParag } from "../../components/UI/AppParagraph/AppParagraph";
-import { AppInput } from "../../components/UI/AppInput/AppInput";
+import { AppInput } from "../../components/UI/AppInputLogin/AppInputLogin";
+import { AppButton } from "../../components/UI/AppButton/AppButton";
+
 
 export const ForgotPasswordPage = () => {
     return(
@@ -13,7 +15,7 @@ export const ForgotPasswordPage = () => {
                 <AppParag text="Укажите свой номер телефона, чтобы получить код для сброса пароля."/>
                 <form action="#">
                     <AppInput type="tel" inputPlaceholder="Номер телефона"/>
-                    <button>Отправить</button>
+                    <AppButton value="Отправить"/>
                 </form>
             </div> 
         </Container>

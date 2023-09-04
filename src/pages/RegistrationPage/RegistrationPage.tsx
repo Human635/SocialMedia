@@ -2,8 +2,9 @@ import React from "react";
 import "./RegistrationPage.scss"
 import { Container } from "../../components/UI/Container/Container";
 import { AppHeader } from "../../components/UI/AppHeader/AppHeader";
-import { AppInput } from "../../components/UI/AppInput/AppInput";
+import { AppInput } from "../../components/UI/AppInputLogin/AppInputLogin";
 import { BackInfo } from "../../components/BackInfo/BackInfo"
+import { AppButton } from "../../components/UI/AppButton/AppButton";
 
 export const RegistrationPage = () => {
     return(
@@ -14,7 +15,7 @@ export const RegistrationPage = () => {
                     <AppInput type="username_usersurname" inputPlaceholder="Имя и фамилие"/>
                     <AppInput type="tel" inputPlaceholder="Номер телефона"/>
                     <AppInput type="password" inputPlaceholder="Пароль"/>
-                    <button>Зарегистрироваться</button>
+                    <AppButton value="Зарегистрироваться"/>
                 </form>
                 <BackInfo />
             </div>
