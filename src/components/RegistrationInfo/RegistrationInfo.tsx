@@ -1,9 +1,9 @@
 import React from "react";
-import "./RegistrationInfo.scss"
+import { ThemeRegistration } from "./RegistrationInfo.style";
 
 export const RegistrationInfo = () => {
   return(
-    <div className="registration">
+    <ThemeRegistration className="registration">
         <span>
           У вас нет аккаунта? <a href="/RegistrationPage">Зарегистрироваться</a>
         </span>
@@ -22,6 +22,6 @@ export const RegistrationInfo = () => {
             <img src="./img/icons/mail-ru.svg" alt="Mail.ru" />
           </a>
         </div>
-      </div>
+      </ThemeRegistration>
   )
 }

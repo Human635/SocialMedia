@@ -1,4 +1,5 @@
 import React from "react";
+import { ThemeParagraph } from "./AppParagraph.style";
 
 type AppParagraphProps = {
     text : string
@@ -6,6 +7,6 @@ type AppParagraphProps = {
 
 export const AppParag = ({ text }: AppParagraphProps) => {
     return(
-        <p>{ text }</p>
+        <ThemeParagraph>{ text }</ThemeParagraph>
     )
 }

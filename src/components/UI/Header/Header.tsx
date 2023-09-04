@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "./Header.scss";
 import { AppInputMain } from "../AppInputMain/AppInputMain";
+import { ThemeHeader } from "./Header.style";
 
 export const Header = () => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   return (
-    <header className="Header">
+    <ThemeHeader className="Header">
       <div className="Header__logo">
         <a href="#">
           <svg
@@ -97,6 +97,6 @@ export const Header = () => {
           />
         </svg>
       </div>
-    </header>
+    </ThemeHeader>
   );
 };

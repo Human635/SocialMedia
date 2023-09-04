@@ -1,5 +1,4 @@
 import React from "react";
-import "./RegistrationPage.scss"
 import { Container } from "../../components/UI/Container/Container";
 import { AppHeader } from "../../components/UI/AppHeader/AppHeader";
 import { AppInput } from "../../components/UI/AppInputLogin/AppInputLogin";

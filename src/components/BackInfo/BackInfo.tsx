@@ -1,8 +1,9 @@
 import React from "react";
+import { ThemeBack } from "./BackInfo.style";
 
 export const BackInfo = () => {
   return(
-    <div className="registration">
+    <ThemeBack className="registration">
         <span>
           Уже есть аккаунт? <a href="/">Войти</a>
         </span>
@@ -21,6 +22,6 @@ export const BackInfo = () => {
             <img src="./img/icons/mail-ru.svg" alt="Mail.ru" />
           </a>
         </div>
-      </div>
+      </ThemeBack>
   )
 }

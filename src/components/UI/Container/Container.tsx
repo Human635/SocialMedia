@@ -1,5 +1,5 @@
 import React from "react";
-import './Container.scss'
+import { ThemeContainer } from "./Container.style";
 
 type ContainerProps = {
     children: React.ReactNode
@@ -7,6 +7,6 @@ type ContainerProps = {
 
 export const Container = ({ children }: ContainerProps) => {
     return (
-        <div className="container"> {children} </div>
+        <ThemeContainer className="container"> {children} </ThemeContainer>
     )
 }
