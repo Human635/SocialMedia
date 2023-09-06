@@ -14,19 +14,6 @@ body {
   color: var(--text-color);
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:visited {
-    color: var(--text-color);
-  }
-}
-
 ._no-select {
   -webkit-touch-callout: none; //? iOS Safari
   -webkit-user-select: none; //? Safari

@@ -13,18 +13,6 @@ max-width: 500px;
 text-align: center;
 padding: 40px;
 
-a {
-    display: inline-block;
-    width: 100%;
-    text-align: right;
-    text-decoration: none;
-    color: ${(props) => props.theme.colors.gray};
-
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
 @media (max-width: 530px) {
     width: 100%;
 }
