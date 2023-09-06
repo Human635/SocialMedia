@@ -16,6 +16,4 @@ text-decoration: none;
     color: ${(props) => props.theme.colors.textColor};
     text-decoration: underline;
 }
-
-
 `
