@@ -5,8 +5,8 @@ type ContainerProps = {
     children: React.ReactNode
 }
 
-export const Container = ({ children }: ContainerProps) => {
+export const Container = ({ children , ...props}: ContainerProps) => {
     return (
-        <ThemeContainer className="container"> {children} </ThemeContainer>
+        <ThemeContainer className="container" {...props}> {children} </ThemeContainer>
     )
 }

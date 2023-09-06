@@ -10,8 +10,8 @@ type AppButtonProps = {
     isDisabled?: boolean
 }
 
-export const AppButton = ({nextPage, type,  value, isError, isDisabled}: AppButtonProps) => {
+export const AppButton = ({nextPage, type,  value, isError, isDisabled, ...props}: AppButtonProps) => {
     return(
-      <ThemeButton type={type} disabled={isDisabled}  isError={isError}>{value}</ThemeButton>
+      <ThemeButton type={type} disabled={isDisabled}  isError={isError} { ...props}>{value}</ThemeButton>
     )
 }

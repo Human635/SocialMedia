@@ -5,8 +5,8 @@ type AppParagraphProps = {
     text : string
 }
 
-export const AppParag = ({ text }: AppParagraphProps) => {
+export const AppParag = ({ text, ...props }: AppParagraphProps) => {
     return(
-        <ThemeParagraph>{ text }</ThemeParagraph>
+        <ThemeParagraph {...props}>{ text }</ThemeParagraph>
     )
 }
