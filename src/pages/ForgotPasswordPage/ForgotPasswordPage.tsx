@@ -33,7 +33,7 @@ export const ForgotPasswordPage = () => {
                 <AppHeader type="h1" headerText="Забыли пароль?"/>
                 <AppParag text="Укажите свой номер телефона, чтобы получить код для сброса пароля."/>
                 <form onSubmit={handleSubmit(onForgotPasswordSubmit)}>
-                 <Controller 
+                    <Controller 
                         name='userphone' 
                         control={control} 
                         render={({ field }) => 
