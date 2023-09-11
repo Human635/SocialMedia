@@ -1,12 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
+import { ThemeProfileHeader } from "./ProfileHeader.style";
 
 export const ProfileHeader = () => {
     const user = useSelector((state: RootState) => state.userSlice.user )
 
     return(
-      <div className="ProfileHeader">
+      <ThemeProfileHeader className="ProfileHeader">
           <svg
             className="icon icon-edit"
             viewBox="0 0 50 50"
@@ -44,6 +45,6 @@ export const ProfileHeader = () => {
           </div>
         </div>
         <div className="profile-background"></div>
-      </div>
+      </ThemeProfileHeader>
     )
 }
