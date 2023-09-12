@@ -7,17 +7,22 @@ import { AppInput } from "../../components/UI/AppInputLogin/AppInputLogin";
 import { BackInfo } from "../../components/BackInfo/BackInfo"
 import { AppButton } from "../../components/UI/AppButton/AppButton";
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useAddUserMutation } from "../../store/api/authApi";
 
 interface RegistrationForm {
     username: string
     userphone: string
     userpassword: string
+    useremail: string
+    usercity: string
 }
 
 const RegistrationFormSchema = yup.object({
     username:yup.string().required('Обязательное поле!'),
     userphone:yup.string().required('Обязательное поле!'),
-    userpassword:yup.string().required('Обязательное поле!')
+    userpassword:yup.string().required('Обязательное поле!'),
+    useremail:yup.string().required('Обязательное поле!'),
+    usercity:yup.string().required('Обязательное поле!')
 })
 
 export const RegistrationPage = () => {
@@ -26,11 +31,23 @@ export const RegistrationPage = () => {
         defaultValues: {
             username: '',
             userphone: '',
+            useremail: '',
+            usercity: '',
             userpassword: ''
         }
     })
 
-    const onRegistrationSubmit = (data: any) => console.log(data)
+    const [registeruser] = useAddUserMutation()
+
+    const onRegistrationSubmit = (data: RegistrationForm) => {
+        registeruser({
+            name: data.username,
+            phone_number: data.userphone,
+            password: data.userpassword,
+            email: data.useremail,
+            user_city: data.usercity
+        })
+    }
 
     return(
         <Container>
@@ -68,6 +85,30 @@ export const RegistrationPage = () => {
                         <AppInput 
                             type="password" 
                             inputPlaceholder="Пароль" 
+                            isError={errors.userpassword ? true : false}
+                            errorText={errors.userpassword?.message}
+                            {...field}
+                        />}
+                    />
+                    <Controller 
+                        name='useremail' 
+                        control={control} 
+                        render={({ field }) => 
+                        <AppInput 
+                            type="useremail" 
+                            inputPlaceholder="Ваш эмаил" 
+                            isError={errors.userphone ? true : false}
+                            errorText={errors.userphone?.message}
+                            {...field}
+                        />}
+                    />
+                    <Controller 
+                        name='usercity' 
+                        control={control} 
+                        render={({ field }) => 
+                        <AppInput 
+                            type="usercity" 
+                            inputPlaceholder="Город" 
                             isError={errors.userpassword ? true : false}
                             errorText={errors.userpassword?.message}
                             {...field}

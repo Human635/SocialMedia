@@ -13,15 +13,16 @@ import { AppLink } from "../../components/UI/AppLink/AppLink";
 import { RootState } from "../../store/store";
 import { changeUser } from "../../store/userSlice";
 import { User } from "../../store/userSlice";
+import { useGetUserQuery, useLoginUserMutation } from "../../store/api/authApi";
 
-const mockUser: User = {
-  user_id: 999,
-  name: "Pavel",
-  mail: "AAAtest@getMaxListeners.com",
-  phone_number: +998900310480,
-  reg_data: new Date().toISOString(),
-  city: "Tashkent",
-};
+// const mockUser: User = {
+//   user_id: 999,
+//   name: "Pavel",
+//   mail: "AAAtest@getMaxListeners.com",
+//   phone_number: +998900310480,
+//   reg_data: new Date().toISOString(),
+//   city: "Tashkent",
+// };
 
 interface LoginForm {
   useremail: string;
@@ -58,10 +59,23 @@ export const LoginPage = () => {
     },
   });
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const onLoginSubmit = (data: LoginForm) => {};
+  const [loginUser] = useLoginUserMutation();
+
+  const onLoginSubmit = async (data: LoginForm) => {
+    try{
+      
+      const res = await loginUser({
+      email: data.useremail,
+      password: data.userpassword,
+    }) 
+      
+      return res
+    }catch(err) {
+      throw err
+    }
+  };
 
   // const onLoginSubmit = (data: any) => console.log(data);
 
