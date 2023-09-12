@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { ThemeProfileHeader } from "./ProfileHeader.style";
+import { AppButton } from "../UI/AppButton/AppButton";
 
 export const ProfileHeader = () => {
     const user = useSelector((state: RootState) => state.userSlice.user )
@@ -40,8 +41,8 @@ export const ProfileHeader = () => {
             </div>
           </div>
           <div className="buttons-wrapper">
-            <button className="secondary">Редактировать профиль</button>
-            <button className="primary">Добавить историю</button>
+            <AppButton className="secondary" value="Редактировать профиль"/>
+            <AppButton className="primary" value="Добавить историю"/>
           </div>
         </div>
         <div className="profile-background"></div>

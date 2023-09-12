@@ -62,7 +62,11 @@ position: relative;
 }
 
 .user__name {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
+}
+
+h1{
+    margin: 0px;
 }
 
 .user__block {
@@ -102,7 +106,7 @@ position: relative;
 
 .profile-background {
     width: 100%;
-    height: 100%;
+    height: 300px;
     object-fit: cover;
 
     position: absolute;

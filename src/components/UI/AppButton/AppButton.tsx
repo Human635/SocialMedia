@@ -6,10 +6,11 @@ interface AppButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>  
     value: string
     isError?: boolean
     isDisabled?: boolean
+    className?: string
 }
 
-export const AppButton = ({nextPage, type,  value, isError, isDisabled, ...props}: AppButtonProps) => {
+export const AppButton = ({nextPage, type, className,  value, isError, isDisabled, ...props}: AppButtonProps) => {
     return(
-      <ThemeButton  disabled={isDisabled}  isError={isError} { ...props}>{value}</ThemeButton>
+      <ThemeButton className={className}  disabled={isDisabled}  isError={isError} { ...props}>{value}</ThemeButton>
     )
 }
