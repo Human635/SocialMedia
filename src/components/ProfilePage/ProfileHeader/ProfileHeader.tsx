@@ -1,9 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+import { RootState } from "../../../store/store";
 import { ThemeProfileHeader } from "./ProfileHeader.style";
-import { AppButton } from "../UI/AppButton/AppButton";
-
+import { AppButton } from "../../UI/AppButton/AppButton";
 export const ProfileHeader = () => {
     const user = useSelector((state: RootState) => state.userSlice.user )
 

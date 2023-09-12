@@ -6,22 +6,6 @@
   grid-template-columns: minmax(300px, 360px) auto minmax(300px, 360px);
   gap: 30px;
 
-  .Main {
-    grid-area: M;
-
-    .UserPosts {
-      margin-bottom: 20px;
-    }
-
-    .Post {
-      margin-bottom: 20px;
-    }
-
-    .WhatsNew {
-      margin-bottom: 20px;
-    }
-  }
-
   .RightSide {
     grid-area: R;
 

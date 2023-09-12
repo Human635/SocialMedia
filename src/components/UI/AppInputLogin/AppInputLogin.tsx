@@ -2,7 +2,7 @@ import  React from "react";
 import { ThemeInput, ThemeInputError } from "./AppInputLogin.style";
 
 type AppInputProps = {
-    type: 'tel' | 'password' | 'username_usersurname' | 'text'
+    type: 'tel' | 'password' | 'username_usersurname' | 'text' | 'email'
     inputPlaceholder: string
     name?: string
     id?: string
