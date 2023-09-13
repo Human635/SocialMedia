@@ -35,17 +35,9 @@ const LoginFormSchema = yup.object({
 });
 
 export const LoginPage = () => {
-  // const user = useSelector((state: RootState) => state.userSlice.user)
-
   // const onLoginClick = () => {
-  //   dispatch(changeUser(mockUser))
+  //   dispatch()
   // }
-
-  // useEffect(() => {
-  //   if (user?.user_id) {
-  //     navigate('/profile')
-  //   }
-  // }, [user, navigate])
 
   const {
     control,
@@ -59,18 +51,22 @@ export const LoginPage = () => {
     },
   });
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const [loginUser] = useLoginUserMutation();
+  const [loginUser, { data: userData }] = useLoginUserMutation();
+
+  useEffect(() => {
+    if (userData?.user_id) {
+      navigate('/profile')
+    }
+  }, [userData, navigate])
 
   const onLoginSubmit = async (data: LoginForm) => {
     try{
-      
       const res = await loginUser({
       email: data.useremail,
       password: data.userpassword,
     }) 
-      
       return res
     }catch(err) {
       throw err
@@ -89,7 +85,7 @@ export const LoginPage = () => {
             control={control}
             render={({ field }) => (
               <AppInput
-                type="email"
+                type="useremail"
                 inputPlaceholder="Ваш эмаил"
                 isError={errors.useremail ? true : false}
                 errorText={errors.useremail?.message}
@@ -116,7 +112,7 @@ export const LoginPage = () => {
             type="submit"
             isDisabled={!!Object.keys(errors).length}
             value="Войти"
-            onSubmit={onLoginSubmit}
+            // onSubmit={onLoginSubmit}
           ></AppButton>
         </form>
         <AppLink toPage="../ForgotPasswordPage" value="Забыли пароль?" />
