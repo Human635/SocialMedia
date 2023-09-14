@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../store/store";
 import { ThemeProfileHeader } from "./ProfileHeader.style";
 import { AppButton } from "../../UI/AppButton/AppButton";
+import { UserAvatar } from "./UserAvatar/UserAvatar";
+import { UserParametrs } from "./UserParametr/UserParametrs";
+import { UserBackground } from "./UserBackround/UserBackground";
+import { ButtonWrapper } from "./ButtonWrapper/ButtonWrapper";
+
 export const ProfileHeader = () => {
     const user = useSelector((state: RootState) => state.userSlice.user )
+    const [ avatar, setAvatar ] = useState('./img/users/denis-frolov.jpeg')
+
+    const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+      if (event.target.files?.[0]){
+        const formData = new FormData()
+  
+        const file = event.target.files[0]
+        formData.append('photo_file', file)
+
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+
+        reader.onload = function() {
+          setAvatar(reader.result as string)
+        }
+
+        reader.onerror = function() {
+          throw new Error('Файл не загружен')
+        }
+      }
+    }
 
     return(
       <ThemeProfileHeader className="ProfileHeader">
@@ -21,30 +47,14 @@ export const ProfileHeader = () => {
             />
           </svg>
         <div className="user__block">
-          <img src="./img/users/denis-frolov.jpeg" alt="Denis Frolov" />
+          <UserAvatar userName="" src={''} onAvatarClick={handleImageUpload}/>
           <div className="user__description">
             <h1 className="user__name">{user?.name}</h1>
-            <div className="user__info">
-              <div className="parameter">
-                <span className="key">Друзья</span>
-                <span className="value">130</span>
-              </div>
-              <div className="parameter">
-                <span className="key">Подписчики</span>
-                <span className="value">923</span>
-              </div>
-              <div className="parameter">
-                <span className="key">Подписки</span>
-                <span className="value">246</span>
-              </div>
-            </div>
+            <UserParametrs/>
           </div>
-          <div className="buttons-wrapper">
-            <AppButton className="secondary" value="Редактировать профиль"/>
-            <AppButton className="primary" value="Добавить историю"/>
-          </div>
+          <ButtonWrapper/>
         </div>
-        <div className="profile-background"></div>
+        <UserBackground/>
       </ThemeProfileHeader>
     )
 }

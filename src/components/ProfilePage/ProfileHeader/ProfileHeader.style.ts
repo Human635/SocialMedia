@@ -33,34 +33,6 @@ position: relative;
     }
 }
 
-.user__info {
-    display: inline-flex;
-    align-items: center;
-
-    gap: calc(3.8vw - 34px); 
-    border-top: 1px solid var(--light-gray);
-    padding-top: 20px;
-
-    .parameter {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-
-        border-radius: 12px;
-        padding: 10px;
-        transition: 200ms;
-
-        &:hover {
-        background-color: var(--light-gray);
-        }
-
-        .value {
-        color: var(--gray);
-        }
-    }
-}
-
 .user__name {
     margin-bottom: 0px;
 }
@@ -84,58 +56,9 @@ h1{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    img {
-        width: calc(3.2vw + 113px); 
-        height: calc(3.2vw + 113px);
-        object-fit: cover;
-        border: 5px solid var(--elems-bgc);
-        border-radius: 50%;
-
-        position: absolute;
-        top: -56px;
-        left: 30px;
-    }
-
-    .buttons-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
 }
 
-.profile-background {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
 
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-
-    background: rgb(44, 40, 113);
-    background: linear-gradient(
-        90deg,
-        rgba(44, 40, 113, 1) 0%,
-        rgba(171, 101, 128, 1) 37%,
-        rgba(195, 223, 176, 1) 89%,
-        rgba(203, 207, 150, 1) 99%
-    );
-    background-size: 200% 200%;
-    animation: wallpaper-anim 10s ease infinite;
-}
-@keyframes wallpaper-anim {
-    0% {
-    background-position: 0% 0%;
-    }
-    50% {
-    background-position: 100% 0%;
-    }
-    100% {
-    background-position: 0% 0%;
-    }
-}
 
 
   
@@ -160,13 +83,6 @@ h1{
 
         padding: 20px;
 
-        img {
-            width: 130px;
-            height: 130px;
-            top: -75px;
-            left: 50px;
-        }
-
         .user__description {
             width: 100%;
         }
@@ -182,15 +98,6 @@ h1{
 
         .user__name {
             text-align: right;
-        }
-
-        .buttons-wrapper {
-            width: 100%;
-            flex-direction: row;
-
-            button {
-                flex: 1 1 50%;
-            }
         }
     }
 }
