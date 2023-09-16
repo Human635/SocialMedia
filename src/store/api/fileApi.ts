@@ -27,3 +27,5 @@ export const fileApi = createApi({
     }),
   }),
 });
+
+export const { useUploadFileMutation } = fileApi

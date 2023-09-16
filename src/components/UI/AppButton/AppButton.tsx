@@ -3,7 +3,7 @@ import { ThemeButton } from "./AppButton.style";
 
 interface AppButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>  {
     nextPage?: string
-    value: string
+    value?: string
     isError?: boolean
     isDisabled?: boolean
     className?: string
