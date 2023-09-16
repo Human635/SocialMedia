@@ -68,6 +68,7 @@ export const FileInputIcon = styled.input`
   right: 20px;
   opacity: 0;
   background-color: red;
+  z-index: 2;
 
   width: 40px;
   height: 40px;
