@@ -1,11 +1,12 @@
 import React from "react";
 import { AppButton } from "../../../UI/AppButton/AppButton";
+import { ThemeButtonWrapper } from "./ButtonWrapper.style";
 
 export const ButtonWrapper = () => {
   return (
-    <div className="buttons-wrapper">
+    <ThemeButtonWrapper className="buttons-wrapper">
       <AppButton className="secondary" value="Редактировать профиль" />
       <AppButton className="primary" value="Добавить историю" />
-    </div>
+    </ThemeButtonWrapper>
   );
 };

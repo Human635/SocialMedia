@@ -27,6 +27,8 @@ export const ThemeUserParametrs = styled.div`
     }
   }
 
+  margin: 0;
+
   @media (max-width: 1750px) {
     width: 100%;
 

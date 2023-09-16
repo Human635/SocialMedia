@@ -6,9 +6,10 @@ export const ThemeUserBackground = styled.div`
   object-fit: cover;
 
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   z-index: 1;
+
 
   background: rgb(44, 40, 113);
   background: linear-gradient(

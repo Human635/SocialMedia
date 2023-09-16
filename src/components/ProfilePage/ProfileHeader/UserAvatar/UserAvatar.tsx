@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import { UserInitial, FileInput } from "./UserAvatar.style";
+import { UserInitial, FileInput, User,   } from "./UserAvatar.style";
 
 interface UserAvatarProps {
   src: string
@@ -9,7 +9,7 @@ interface UserAvatarProps {
 };
 
 export const UserAvatar = ({ src, onAvatarClick, userName }: UserAvatarProps) => {
-    const [userInitial, setUserInitial] = useState<string>('')
+    const [initial, setUserInitial] = useState<string>('')
     useEffect(() => {
         if (!src && userName) {
             let initialsArr = userName.split(' ')
@@ -20,8 +20,8 @@ export const UserAvatar = ({ src, onAvatarClick, userName }: UserAvatarProps) =>
   return (
     <>
         {src ? 
-            (<img src={src} alt=""  />) :
-            (<UserInitial>{userInitial}</UserInitial>)
+            (<User src={src} alt=""  />) :
+            (<UserInitial>{initial}</UserInitial>)
         }
         <FileInput type="file" onChange={onAvatarClick}/>
     </>
