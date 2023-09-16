@@ -9,6 +9,11 @@ export const ThemeUserBackground = styled.div`
   top: 0px;
   left: 0px;
   z-index: 1;
+  font-size: 20px;
+  align-text: center;
+  width: 100%;
+  align-items: center;
+  justify-contect: center;
 
 
   background: rgb(44, 40, 113);
@@ -33,3 +38,38 @@ export const ThemeUserBackground = styled.div`
     }
   }
 `;
+
+export const ThemeBackgroundChange = styled.svg`
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+
+  width: 40px;
+  height: 40px;
+  fill: white;
+
+  transition: 200ms;
+
+  &:hover {
+      filter: drop-shadow(0 0 10px var(--prime-color));
+  }
+
+  &:active {
+      scale: 0.9;
+      transition: 100ms;
+  }
+`
+export const FileInputIcon = styled.input`
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  opacity: 0;
+  background-color: red;
+
+  width: 40px;
+  height: 40px;
+  fill: white;
+`

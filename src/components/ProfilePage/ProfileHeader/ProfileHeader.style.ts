@@ -10,29 +10,6 @@ background-color: var(--elems-bgc);
 box-shadow: 0 0 10px var(--light-gray);
 position: relative;
 
-.icon-edit {
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 2;
-
-    width: 40px;
-    height: 40px;
-    fill: white;
-
-    transition: 200ms;
-
-    &:hover {
-        filter: drop-shadow(0 0 10px var(--prime-color));
-    }
-
-    &:active {
-        scale: 0.9;
-        transition: 100ms;
-    }
-}
-
 .user__name {
     margin-bottom: 0px;
 }

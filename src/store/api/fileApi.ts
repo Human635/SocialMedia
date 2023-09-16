@@ -4,6 +4,7 @@ import { baseQuery } from "../../utils/baseQuery";
 interface UploadFilePayload {
     post_id: number
     photo_file: string
+    background_file: string
 }
 
 interface UploadFileResponse {
