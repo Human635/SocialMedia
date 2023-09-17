@@ -6,6 +6,7 @@ import { AppInputMain } from "../../components/UI/AppInputMain/AppInputMain";
 import { Post } from "../../components/UI/Post/Post";
 import { useGetPostListQuery } from "../../store/api/postApi";
 import { LeftSideProfile } from "../../components/UI/LeftSide/LeftSide";
+import { RightSide } from "../../components/MainPage/RightSide/RightSide";
 
 export const MainPage = () => {
   const {data, isError, isLoading} = useGetPostListQuery(null)
@@ -291,6 +292,7 @@ export const MainPage = () => {
             </svg>
           </div>
         </main>
+        <RightSide />
       </div>
     </ContainerMainPage>
   );

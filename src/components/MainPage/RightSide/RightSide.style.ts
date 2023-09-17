@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 export const ThemRightSideMain = styled.aside`
   grid-area: R;
