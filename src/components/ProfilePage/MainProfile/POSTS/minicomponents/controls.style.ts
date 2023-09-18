@@ -1,18 +1,83 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
-export const ThemeMainPage = styled.main`
-  grid-area: M;
+export const Themecontrols = styled.div`
+  display: flex;
+  margin-bottom: 20px;
 
-  .UserPosts {
-    margin-bottom: 20px;
+  .tabs {
+    flex: 1 1 auto;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .tab {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+
+      transition: 200ms;
+
+      &._active {
+        border-color: var(--light-gray);
+        background-color: var(--bgc);
+      }
+
+      &:hover {
+        border-color: var(--light-gray);
+        background-color: var(--bgc);
+      }
+
+      &:active {
+        background-color: var(--prime-color);
+        color: white;
+        transition: 100ms;
+
+        .icon {
+          fill: white;
+        }
+      }
+    }
   }
 
-  .Post {
-    margin-bottom: 20px;
-  }
+  .upload-media {
+    cursor: pointer;
+    flex: 0 1 auto;
 
-  .WhatsNew {
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 8px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    transition: 200ms;
+
+    .icon {
+      width: 15px;
+      height: 15px;
+      fill: var(--prime-color);
+    }
+
+    &:hover {
+      border-color: var(--light-gray);
+      background-color: var(--bgc);
+    }
+
+    &:active {
+      transition: 100ms;
+      background-color: var(--prime-color);
+      color: white;
+
+      .icon {
+        fill: white;
+      }
+    }
   }
 
   .WhatsNew {
@@ -63,6 +128,67 @@ export const ThemeMainPage = styled.main`
         &:active {
           transition: 100ms;
           background-color: var(--prime-color);
+          fill: white;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 730px) {
+    .WhatsNew {
+      padding: 10px 15px;
+    }
+  }
+
+  .UserPosts {
+    box-shadow: 0 0 10px var(--light-gray);
+    padding: calc(1vw + 11px);
+    background-color: var(--elems-bgc);
+    border-radius: 20px;
+    position: relative;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      transition: 200ms;
+      fill: var(--prime-color);
+    }
+
+    .media-container {
+      margin-bottom: 20px;
+    }
+
+    .show-all {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: 200ms;
+
+      margin: 0 0 0 auto;
+      width: fit-content;
+
+      .icon {
+        width: 15px;
+        height: 15px;
+        fill: var(--prime-color);
+        rotate: -90deg;
+      }
+
+      &:hover {
+        border-color: var(--light-gray);
+        background-color: var(--bgc);
+      }
+
+      &:active {
+        transition: 100ms;
+        background-color: var(--prime-color);
+        color: white;
+
+        .icon {
           fill: white;
         }
       }
@@ -174,6 +300,14 @@ export const ThemeMainPage = styled.main`
     }
   }
 
+  @media (max-width: 1480px) {
+    .media-container {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      grid-template-rows: minmax(100px, 200px);
+      grid-auto-rows: minmax(100px, 200px);
+    }
+  }
+
   .Repost__wrapper {
     border-left: 1px solid var(--light-gray);
     padding-left: 30px;
@@ -236,20 +370,6 @@ export const ThemeMainPage = styled.main`
       &.mark {
         justify-self: self-end;
       }
-    }
-  }
-
-  @media (max-width: 1480px) {
-    .media-container {
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      grid-template-rows: minmax(100px, 200px);
-      grid-auto-rows: minmax(100px, 200px);
-    }
-  }
-
-  @media (max-width: 730px) {
-    .WhatsNew {
-      padding: 10px 15px;
     }
   }
 `;

@@ -1,21 +1,7 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
-export const ThemeMainPage = styled.main`
-  grid-area: M;
-
-  .UserPosts {
-    margin-bottom: 20px;
-  }
-
-  .Post {
-    margin-bottom: 20px;
-  }
-
-  .WhatsNew {
-    margin-bottom: 20px;
-  }
-
-  .WhatsNew {
+export const ThemeMediaContainer = styled.div`
+.WhatsNew {
     box-shadow: 0 0 10px var(--light-gray);
     background-color: var(--elems-bgc);
     border-radius: 20px;
@@ -63,6 +49,67 @@ export const ThemeMainPage = styled.main`
         &:active {
           transition: 100ms;
           background-color: var(--prime-color);
+          fill: white;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 730px) {
+    .WhatsNew {
+      padding: 10px 15px;
+    }
+  }
+
+  .UserPosts {
+    box-shadow: 0 0 10px var(--light-gray);
+    padding: calc(1vw + 11px);
+    background-color: var(--elems-bgc);
+    border-radius: 20px;
+    position: relative;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      transition: 200ms;
+      fill: var(--prime-color);
+    }
+
+    .media-container {
+      margin-bottom: 20px;
+    }
+
+    .show-all {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: 200ms;
+
+      margin: 0 0 0 auto;
+      width: fit-content;
+
+      .icon {
+        width: 15px;
+        height: 15px;
+        fill: var(--prime-color);
+        rotate: -90deg;
+      }
+
+      &:hover {
+        border-color: var(--light-gray);
+        background-color: var(--bgc);
+      }
+
+      &:active {
+        transition: 100ms;
+        background-color: var(--prime-color);
+        color: white;
+
+        .icon {
           fill: white;
         }
       }
@@ -174,6 +221,14 @@ export const ThemeMainPage = styled.main`
     }
   }
 
+  @media (max-width: 1480px) {
+    .media-container {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      grid-template-rows: minmax(100px, 200px);
+      grid-auto-rows: minmax(100px, 200px);
+    }
+  }
+
   .Repost__wrapper {
     border-left: 1px solid var(--light-gray);
     padding-left: 30px;
@@ -238,18 +293,4 @@ export const ThemeMainPage = styled.main`
       }
     }
   }
-
-  @media (max-width: 1480px) {
-    .media-container {
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      grid-template-rows: minmax(100px, 200px);
-      grid-auto-rows: minmax(100px, 200px);
-    }
-  }
-
-  @media (max-width: 730px) {
-    .WhatsNew {
-      padding: 10px 15px;
-    }
-  }
-`;
+`
