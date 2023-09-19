@@ -1,31 +1,43 @@
 import React, { useState } from "react";
 import { PostMenu } from "./PostMenu";
 import { useUploadFileMutation } from "../../../store/api/fileApi";
+import { format } from "date-fns";
 
 interface PostProps {
-    userName: string 
-    postDate: string
-    photos: Array<string>
-    postText: string
-    postId: string
+  userName: string;
+  postDate: string;
+  photos: Array<string>;
+  postText: string;
+  postId: string;
 }
 
-export const Post = ({userName, postDate, photos, postText, postId}: PostProps) => {
-    const [isMenuOpen, toogleMenu] = useState<boolean>(false)
+export const Post = ({
+  userName,
+  postDate,
+  photos,
+  postText,
+  postId,
+}: PostProps) => {
+  const [isMenuOpen, toogleMenu] = useState<boolean>(false);
 
-    const [uploadFile] = useUploadFileMutation()
+  const [uploadFile] = useUploadFileMutation();
 
-    const onPostFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (event.target.files?.[0]) {
-          const formData = new FormData();
-        const file = event.target.files[0];
+  const onPostFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files?.[0]) {
+      const formData = new FormData();
+      const file = event.target.files[0];
 
-          formData.append('post_id', postId)
-          formData.append("photo_file", file);
+      formData.append("post_id", postId);
+      formData.append("photo_file", file);
 
-          uploadFile(formData)
-        }
-      };
+      // uploadFile(formData)
+    }
+  };
+
+  const formattedDate = format(
+    new Date(postDate),
+    'eeee MM/dd/yyyy hh:mm'
+  )
 
   return (
     <div className="Post _liked _marked">
@@ -35,19 +47,17 @@ export const Post = ({userName, postDate, photos, postText, postId}: PostProps) 
           <a href="#" className="main__text">
             {userName}
           </a>
-          <p className="secondary__text">{postDate}</p>
+          <p className="secondary__text">{formattedDate}</p>
         </div>
       </div>
       <p className="Post__text">{postText}</p>
-      {photos.length && <div className="media-container">
-        {photos.map((photo) => (
-        <img
-          className="media__item"
-          src={photo}
-          alt="Post Item"
-        />
-        ))}
-      </div>}
+      {photos.length && (
+        <div className="media-container">
+          {photos.map((photo) => (
+            <img className="media__item" src={photo} alt="Post Item" />
+          ))}
+        </div>
+      )}
       <div className="PostControls">
         <div className="icon-wrapper like">
           <span className="count likes-count">-500</span>
@@ -126,19 +136,19 @@ export const Post = ({userName, postDate, photos, postText, postId}: PostProps) 
         </svg>
       </div>
       <span onClick={() => toogleMenu(!isMenuOpen)}>
-      <svg
-        className="icon icon-more"
-        viewBox="0 0 25 5"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g id="more">
-          <circle id="ellipse" cx="22.5" cy="2.5" r="2.5" />
-          <circle id="ellipse_2" cx="12.5" cy="2.5" r="2.5" />
-          <circle id="ellipse_3" cx="2.5" cy="2.5" r="2.5" />
-        </g>
-      </svg>
+        <svg
+          className="icon icon-more"
+          viewBox="0 0 25 5"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="more">
+            <circle id="ellipse" cx="22.5" cy="2.5" r="2.5" />
+            <circle id="ellipse_2" cx="12.5" cy="2.5" r="2.5" />
+            <circle id="ellipse_3" cx="2.5" cy="2.5" r="2.5" />
+          </g>
+        </svg>
       </span>
-      {isMenuOpen && <PostMenu onUploadClick={onPostFileUpload}/>}
+      {isMenuOpen && <PostMenu onUploadClick={onPostFileUpload} />}
     </div>
   );
 };

@@ -8,8 +8,8 @@ type AppInputMainProps = {
     id?: string
 }
 
-export const AppInputMain = ({id, name, inputPlaceholder, type, ...props}: AppInputMainProps ) => {
+export const AppInputMain = ({id, name, inputPlaceholder, type,  ...props}: AppInputMainProps ) => {
     return(
-        <ThemeInputMain id={id} name={name} type={type} placeholder={inputPlaceholder} {...props}></ThemeInputMain>
+        <ThemeInputMain  id={id} name={name} type={type} placeholder={inputPlaceholder} {...props}></ThemeInputMain>
     )
 }

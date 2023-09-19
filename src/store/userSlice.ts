@@ -6,7 +6,7 @@ interface UserSliceState {
 
 export interface User {
     mail: string
-    phone_number: number
+    phone_number: string
     user_id: number
     name: string
     reg_data: string
