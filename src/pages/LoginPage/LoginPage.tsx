@@ -51,25 +51,25 @@ export const LoginPage = () => {
     },
   });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [loginUser, { data: userData }] = useLoginUserMutation();
 
   useEffect(() => {
     if (userData?.user_id) {
-      navigate('/profile')
+      navigate("/profile");
     }
-  }, [userData, navigate])
+  }, [userData, navigate]);
 
   const onLoginSubmit = async (data: LoginForm) => {
-    try{
+    try {
       const res = await loginUser({
-      email: data.useremail,
-      password: data.userpassword,
-    }) 
-      return res
-    }catch(err) {
-      throw err
+        email: data.useremail,
+        password: data.userpassword,
+      });
+      return res;
+    } catch (err) {
+      throw err;
     }
   };
 
@@ -106,8 +106,8 @@ export const LoginPage = () => {
               />
             )}
           />
-          {/* <AppInput type="tel" inputPlaceholder="Номер телефона"/>
-          <AppInput type="password" inputPlaceholder="Пароль"/> */}
+          <AppInput type="tel" inputPlaceholder="Номер телефона" />
+          <AppInput type="password" inputPlaceholder="Пароль" />
           <AppButton
             type="submit"
             isDisabled={!!Object.keys(errors).length}
